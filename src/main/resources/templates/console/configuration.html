@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title th:text="#{configuration.title}"></title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.8/dist/css/uikit.min.css" />
+    </head>
+    <body>
+        <header>
+            <div uk-alert th:if="${config.error}" th:text="${config.message}"></div>
+        </header>
+        <section class="uk-container uk-container-small">
+            <div class="uk-child-width-expand@s" uk-grid>
+                <div>
+                    <article>
+                        <h1 class="uk-article-title" th:text="#{app.name}"></h1>
+                        <h3 th:text="#{configuration.information.subtitle.1}"></h3>
+                        <p th:text="#{configuration.information.paragraph.1}"></p>
+                        <h3 th:text="#{configuration.information.subtitle.2}"></h3>
+                        <p th:text="#{configuration.information.paragraph.2}"></p>
+                    </article>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-primary uk-card-small uk-card-body">
+                        <h3 class="uk-card-title" th:text="#{configuration.card.title}"></h3>
+                        <form action="#" th:action="@{/console/configuration}" th:object="${config}" method="post">
+                            <fieldset>
+                                <legend class="uk-legend" th:text="#{configuration.card.form.legend.instance}"></legend>
+                                <div class="uk-margin">
+                                    <label th:text="#{configuration.card.form.field.instance.name}"></label>
+                                    <input class="uk-input" type="text" th:field="*{instance.name}" />
+                                    <div class="uk-alert-danger" th:if="${#fields.hasErrors('instance.name')}" th:errors="*{instance.name}"></div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label th:text="#{configuration.card.form.field.instance.code}"></label>
+                                    <input class="uk-input" type="text" th:field="*{instance.code}" />
+                                    <div class="uk-alert-danger" th:if="${#fields.hasErrors('instance.code')}" th:errors="*{instance.code}"></div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="uk-legend" th:text="#{configuration.card.form.legend.user}"></legend>
+                                <div class="uk-margin">
+                                    <label th:text="#{configuration.card.form.field.user.name}"></label>
+                                    <input class="uk-input" type="text" th:field="*{user.name}" />
+                                    <div class="uk-alert-danger" th:if="${#fields.hasErrors('user.name')}" th:errors="*{user.name}"></div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label th:text="#{configuration.card.form.field.user.username}"></label>
+                                    <input class="uk-input" type="text" th:field="*{user.username}" />
+                                    <div class="uk-alert-danger" th:if="${#fields.hasErrors('user.username')}" th:errors="*{user.username}"></div>
+                                </div>
+                                <div class="uk-margin">
+                                    <label th:text="#{configuration.card.form.field.user.password}"></label>
+                                    <input class="uk-input" type="password" th:field="*{user.password}" />
+                                    <div class="uk-alert-danger" th:if="${#fields.hasErrors('user.password')}" th:errors="*{user.password}"></div>
+                                </div>
+                            </fieldset>
+                            <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="submit" th:text="#{configuration.card.form.field.submit}"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.8/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.8/dist/js/uikit-icons.min.js"></script>
+    </body>
+</html>

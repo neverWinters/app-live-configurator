@@ -1,0 +1,20 @@
+package dfa.neverwinters.appliveconfigurator.controllers.console;
+
+import dfa.neverwinters.appliveconfigurator.utils.AppConstants;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * <p>SignInController</p>
+ * <p>Sign in page controller class</p>
+ */
+@Controller
+@RequestMapping("/console")
+public class SignInController
+{
+
+    @GetMapping("/sign-in")
+    public String signIn() { return AppConstants.SIGN_IN_VIEW_PATH; }
+
+}
