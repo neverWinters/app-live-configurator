@@ -1,8 +1,7 @@
-package dfa.neverwinters.appliveconfigurator.process.controller;
+package dfa.neverwinters.appliveconfigurator.process.console;
 
 import dfa.neverwinters.appliveconfigurator.model.entity.InstanceEntityModel;
 import dfa.neverwinters.appliveconfigurator.repository.acces.InstanceRepository;
-import dfa.neverwinters.appliveconfigurator.repository.process.InstanceEntityProcess;
 
 public class ConfigurationProcess {
 
@@ -19,20 +18,18 @@ public class ConfigurationProcess {
      */
     public static boolean createInstance(InstanceRepository repository, InstanceEntityModel model)
     {
-        try
-        {
+//        try
+//        {
+//            InstanceEntityProcess process = new InstanceEntityProcess();
+//
+//            return process.save(repository, model);
+//        }
+//        catch(Exception e)
+//        {
+//            return false;
+//        }
 
-            InstanceEntityProcess process = new InstanceEntityProcess();
-
-            return process.save(repository, model);
-
-        }
-        catch(Exception e)
-        {
-
-            return false;
-
-        }
+        return false;
 
     }
 

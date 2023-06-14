@@ -4,8 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "user")
-public class UserEntityModel {
+@Table(name = "consumer")
+public class ConsumerEntityModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,13 +20,13 @@ public class UserEntityModel {
     @Column(name = "password")
     private String password;
 
-    public UserEntityModel(String name, String username, String password)
-    {
+    public ConsumerEntityModel() { }
 
+    public ConsumerEntityModel(String name, String username, String password)
+    {
         this.name = name;
         this.username = username;
         this.password = password;
-
     }
 
     public long getId() { return id; }

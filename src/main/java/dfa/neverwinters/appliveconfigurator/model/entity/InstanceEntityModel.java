@@ -17,12 +17,12 @@ public class InstanceEntityModel {
     @Column(name = "code")
     private String code;
 
+    public InstanceEntityModel() { }
+
     public InstanceEntityModel(String name, String code)
     {
-
         this.name = name;
         this.code = code;
-
     }
 
     public long getId() { return id; }
