@@ -18,6 +18,5 @@
 *.ipr
 
 ### Project ###
-README.md
 data/
 target/
